@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="taskFlowCall1">
+    <default-activity>view2</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="view2">
+      <page>/view2.jspx</page>
+    </view>
+    <method-call id="methodToThrowException">
+      <method>#{bindings.methodToThrowException.execute}</method>
+      <outcome>
+        <fixed-outcome>methodToThrowException</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="view3">
+      <page>/view3.jspx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>methodToThrowException</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>methodToThrowException</from-outcome>
+        <to-activity-id>view3</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>view3</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>go to view 3</from-outcome>
+        <to-activity-id>view2</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

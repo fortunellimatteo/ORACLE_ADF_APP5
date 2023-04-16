@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  ComponentClass="model.AppModuleImpl"
+  DefClass="model.AppModuleDefImpl"
+  ClearCacheOnRollback="true"
+  ComponentInterface="model.common.AppModule">
+  <DesignTime>
+    <Attr Name="_isDefCodegen" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="SavepointTableView1"
+    ViewObjectName="model.SavepointTableView"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="methodToThrowException"
+      MethodName="methodToThrowException">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+    <Method
+      Name="createSavePoint"
+      MethodName="createSavePoint">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+    <Method
+      Name="insertSavePoint"
+      MethodName="insertSavePoint">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="id"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>
